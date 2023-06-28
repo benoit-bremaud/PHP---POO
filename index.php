@@ -5,6 +5,8 @@ require_once "classes/Compte.php";
 // Il faut maintenant insérer le nom du titulaire
 $compte1 = new Compte("Benoit", 500);
 
+$compte1->setSolde(200);
+
 // On écrit dans la propriété titulaire
 // Avec le constructeur, plus besoin maintenant
 // $compte1->titulaire = "Benoit";
