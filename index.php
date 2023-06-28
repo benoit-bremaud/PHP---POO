@@ -15,7 +15,7 @@ $compte1 = new Compte("Benoit", 500);
 // On dépose 100 euros
 $compte1->deposer(100);
 
-
+echo $compte1->getTitulaire();
 
 ?>
 <p><?= $compte1->voirSolde() ?></p>
