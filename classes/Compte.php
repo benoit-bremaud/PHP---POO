@@ -46,6 +46,21 @@ class Compte // Déclaration de l'objet in UpperCamelCase
     {
         return $this->titulaire;
     }
+    /**
+     * Modifie le nom du titulaire et retourne l'objet
+     *
+     * @param string $nom Nom du titulaire
+     * @return Compte Compte bancaire
+     */
+    public function setTitulaire(string $nom): self //Retour l'objet lui-même
+    {
+        // On vérifie si on a un titulaire
+        if ($nom != "") {
+            $this->titulaire = $nom;
+        }
+        return $this;
+    }
+
 
     /**
      * Déposer de l'argent sur le compte
