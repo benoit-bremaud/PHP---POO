@@ -12,13 +12,16 @@ $compte1 = new Compte("Benoit", 500);
 // On écrit dans la propriété solde
 // $compte1->solde = "500";
 
+// On dépose 100 euros
+$compte1->deposer(100);
+
 var_dump($compte1);
 
-// On créé une nouvelle instance
-$compte2 = new Compte("Robert");
+// // On créé une nouvelle instance
+// $compte2 = new Compte("Robert");
 
-// $compte2->titulaire = "Robert";
+// // $compte2->titulaire = "Robert";
 
-$compte2->solde = 389.25;
+// $compte2->solde = 389.25;
 
-var_dump($compte2);
+// var_dump($compte2);
