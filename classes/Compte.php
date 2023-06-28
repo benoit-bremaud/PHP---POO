@@ -34,5 +34,18 @@ class Compte // Déclaration de l'objet
         // On attribut le montant à la propriété solde
         $this->solde = $montant;
     }
+    /**
+     * Déposer de l'argent sur le compte
+     *
+     * @param float $montant Montant déposé
+     * @return void
+     */
+    public function deposer(float $montant)
+    {
+        // On vérifie si le montant est positif
+        if ($montant > 0) {
+            $this->solde += $montant;
+        }
+    }
 
 }
