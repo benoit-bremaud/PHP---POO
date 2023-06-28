@@ -58,4 +58,22 @@ class Compte // Déclaration de l'objet
         return "Le solde du compte est de $this->solde euros";
     }
 
+    /**
+     * Retire un montant du solde du compte
+     *
+     * @param float $montant Montant à retirer
+     * @return void
+     */
+    public function retirer(float $montant)
+    {
+        // On ne peut pas retirer plus que ce qu'on a
+        // On ne peut pas retirer un montant négatif
+        // On vérifie donc le montant et le solde
+        if ($montant > 0 && $this->solde >= $montant) {
+            $this->solde -= $montant;
+        }else {
+            echo "Montant invalide ou solde insuffisant";
+        }
+    }
+
 }
