@@ -17,6 +17,10 @@ $compte1->deposer(100);
 
 var_dump($compte1);
 
+?>
+<p><?= $compte1->voirSolde() ?></p>
+<?php
+
 // // On créé une nouvelle instance
 // $compte2 = new Compte("Robert");
 
