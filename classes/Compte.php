@@ -61,6 +61,16 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         return $this;
     }
 
+    /**
+     * Retourne le solde du compte
+     *
+     * @return float Solde du compte
+     */
+    public function getSolde(): float
+    {
+        return $this->solde;
+    }
+
 
     /**
      * Déposer de l'argent sur le compte
