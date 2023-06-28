@@ -126,6 +126,17 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         }else {
             echo "Montant invalide ou solde insuffisant";
         }
+        echo $this->decouvert();
+    }
+
+
+    private function decouvert()
+    {
+        if ($this->solde < 0) {
+            return "Vous êtes à découvert";
+        }else {
+            return "Vous n'êtes pas à découvert";
+        }
     }
 
 }
