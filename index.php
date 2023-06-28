@@ -15,11 +15,15 @@ $compte1 = new Compte("Benoit", 500);
 // On dépose 100 euros
 $compte1->deposer(100);
 
-var_dump($compte1);
+
 
 ?>
 <p><?= $compte1->voirSolde() ?></p>
 <?php
+
+$compte1->retirer(700);
+
+var_dump($compte1);
 
 // // On créé une nouvelle instance
 // $compte2 = new Compte("Robert");
