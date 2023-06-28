@@ -71,6 +71,20 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         return $this->solde;
     }
 
+    /**
+     * Modifie le solde du compte
+     *
+     * @param float $montant Montant du solde
+     * @return Compte Compte bancaire
+     */
+    public function setSolde(float $montant): self
+    {
+        if ($montant >= 0) {
+            $this->solde = $montant;
+        }
+        return $this;
+    }
+
 
     /**
      * Déposer de l'argent sur le compte
