@@ -2,20 +2,22 @@
 require_once "classes/Compte.php";
 
 // On instancie le compte
-$compte1 = new Compte;
+// Il faut maintenant insérer le nom du titulaire
+$compte1 = new Compte("Benoit", 500);
 
 // On écrit dans la propriété titulaire
-$compte1->titulaire = "Benoit";
+// Avec le constructeur, plus besoin maintenant
+// $compte1->titulaire = "Benoit";
 
 // On écrit dans la propriété solde
-$compte1->solde = 500;
+// $compte1->solde = "500";
 
 var_dump($compte1);
 
 // On créé une nouvelle instance
-$compte2 = new Compte;
+$compte2 = new Compte("Robert");
 
-$compte2->titulaire = "Robert";
+// $compte2->titulaire = "Robert";
 
 $compte2->solde = 389.25;
 
