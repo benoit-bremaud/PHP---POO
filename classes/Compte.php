@@ -47,5 +47,15 @@ class Compte // Déclaration de l'objet
             $this->solde += $montant;
         }
     }
+    /**
+     * Retourne une chaine de caractères affichant le solde
+     *
+     * @return string
+     */
+    public function voirSolde()
+    {
+        // echo "Le solde du compte est de $this->solde euros";
+        return "Le solde du compte est de $this->solde euros";
+    }
 
 }
