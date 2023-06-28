@@ -3,7 +3,7 @@
  * Objet Compte bancaire
  */
 // Déclaration de ma classe "Compte"
-class Compte // Déclaration de l'objet
+class Compte // Déclaration de l'objet in UpperCamelCase
 {
     // Propriétés
     /**
@@ -11,13 +11,14 @@ class Compte // Déclaration de l'objet
      *
      * @var string
      */
-    public $titulaire;
+    private $titulaire;
+
     /**
      * Solde du compte
      *
      * @var float
      */
-    public $solde;
+    private $solde;
 
     // Fonction magique qui est le constructeur de notre fonction
     /**
@@ -34,6 +35,18 @@ class Compte // Déclaration de l'objet
         // On attribut le montant à la propriété solde
         $this->solde = $montant;
     }
+
+    // Accesseurs
+    /**
+     * Getter de Titulaire - Retourne la valeur du titulaire du compte
+     *
+     * @return string
+     */
+    public function getTitulaire(): string
+    {
+        return $this->titulaire;
+    }
+
     /**
      * Déposer de l'argent sur le compte
      *
