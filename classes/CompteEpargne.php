@@ -49,7 +49,11 @@ class CompteEpargne extends Compte
             $this->taux_interets = $taux_interets;
         }
        
-
         return $this;
+    }
+
+    public function verserInterets()
+    {
+        $this->solde = $this->solde + ($this->solde * $this->taux_interets / 100);
     }
 }
