@@ -5,7 +5,7 @@ require_once "classes/Compte.php";
 // Il faut maintenant insérer le nom du titulaire
 $compte1 = new Compte("Benoit", 500);
 
-$compte1->setSolde(200);
+// $compte1->setSolde(200);
 
 // On écrit dans la propriété titulaire
 // Avec le constructeur, plus besoin maintenant
@@ -26,6 +26,10 @@ echo $compte1->getTitulaire();
 $compte1->retirer(700);
 
 var_dump($compte1);
+
+echo $compte1;
+
+// echo "Le taux d'intérêt du compte est : ". Compte::TAUX_INTERETS."%";
 
 // // On créé une nouvelle instance
 // $compte2 = new Compte("Robert");
