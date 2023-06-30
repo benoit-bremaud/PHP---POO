@@ -20,6 +20,10 @@ class Compte // Déclaration de l'objet in UpperCamelCase
      */
     private $solde;
 
+    // Constantes (variables qui ne changent pas), s'écrivent en MAJUSCULE et underscore_case
+    // A initialiser au moment où on les créer ici 5%
+    private const TAUX_INTERETS = 5;
+
     // Fonction magique qui est le constructeur de notre fonction
     /**
      * Constructeur du compte bancaire
@@ -33,7 +37,18 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         $this->titulaire = $nom; // On injecte le nom dans la propriété "titulaire"
 
         // On attribut le montant à la propriété solde
-        $this->solde = $montant;
+        // On accède à une constantre privée par l'intermiédiaire de "self" self étant le nom de la classe
+        $this->solde = $montant + ($montant * self::TAUX_INTERETS/100);
+
+    }
+    /**
+     * Méthode magique pour la conversion en chaîne de caractères
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return "Vous visualisez le compte {$this->titulaire} le solde est de {$this->solde} euros";
     }
 
     // Accesseurs
@@ -129,7 +144,11 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         echo $this->decouvert();
     }
 
-
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     private function decouvert()
     {
         if ($this->solde < 0) {
