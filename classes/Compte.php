@@ -3,7 +3,7 @@
  * Objet Compte bancaire
  */
 // Déclaration de ma classe "Compte"
-class Compte // Déclaration de l'objet in UpperCamelCase
+abstract class Compte // Permet de rendre cette classe abstraite
 {
     // Propriétés
     /**
@@ -11,19 +11,16 @@ class Compte // Déclaration de l'objet in UpperCamelCase
      *
      * @var string
      */
-    private $titulaire;
+    private string $titulaire;
 
     /**
      * Solde du compte
      *
      * @var float
      */
-    private $solde;
+    protected float $solde; // On remplace "private" par "protected", du coup la propriété est accessible en écriture depuis les classes enfants
 
-    // Constantes (variables qui ne changent pas), s'écrivent en MAJUSCULE et underscore_case
-    // A initialiser au moment où on les créer ici 5%
-    private const TAUX_INTERETS = 5;
-
+    
     // Fonction magique qui est le constructeur de notre fonction
     /**
      * Constructeur du compte bancaire
@@ -38,7 +35,7 @@ class Compte // Déclaration de l'objet in UpperCamelCase
 
         // On attribut le montant à la propriété solde
         // On accède à une constantre privée par l'intermiédiaire de "self" self étant le nom de la classe
-        $this->solde = $montant + ($montant * self::TAUX_INTERETS/100);
+        $this->solde = $montant;
 
     }
     /**
@@ -141,21 +138,8 @@ class Compte // Déclaration de l'objet in UpperCamelCase
         }else {
             echo "Montant invalide ou solde insuffisant";
         }
-        echo $this->decouvert();
     }
 
-    /**
-     * Undocumented function
-     *
-     * @return void
-     */
-    private function decouvert()
-    {
-        if ($this->solde < 0) {
-            return "Vous êtes à découvert";
-        }else {
-            return "Vous n'êtes pas à découvert";
-        }
-    }
+
 
 }
