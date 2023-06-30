@@ -1,41 +1,10 @@
 <?php
 require_once "classes/Compte.php";
+require_once 'classes/CompteCourant.php';
 
 // On instancie le compte
-// Il faut maintenant insérer le nom du titulaire
-$compte1 = new Compte("Benoit", 500);
+$compte1 = new CompteCourant('Benoit', 500, 200);
 
-// $compte1->setSolde(200);
-
-// On écrit dans la propriété titulaire
-// Avec le constructeur, plus besoin maintenant
-// $compte1->titulaire = "Benoit";
-
-// On écrit dans la propriété solde
-// $compte1->solde = "500";
-
-// On dépose 100 euros
-$compte1->deposer(100);
-
-echo $compte1->getTitulaire();
-
-?>
-<p><?= $compte1->voirSolde() ?></p>
-<?php
-
-$compte1->retirer(700);
+$compte1->retirer(200);
 
 var_dump($compte1);
-
-echo $compte1;
-
-// echo "Le taux d'intérêt du compte est : ". Compte::TAUX_INTERETS."%";
-
-// // On créé une nouvelle instance
-// $compte2 = new Compte("Robert");
-
-// // $compte2->titulaire = "Robert";
-
-// $compte2->solde = 389.25;
-
-// var_dump($compte2);
