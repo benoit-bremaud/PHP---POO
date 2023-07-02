@@ -1,5 +1,5 @@
 <?php
-namespace App\Banque;
+namespace App\Banque; // App peut être remplacé par n'importe quoi, souvent les utilisateurs mettent le nom de leur compte GiHub
 
 /**
  * Objet Compte bancaire
