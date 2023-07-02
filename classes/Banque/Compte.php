@@ -1,19 +1,22 @@
 <?php
-namespace App\Banque; // App peut être remplacé par n'importe quoi, souvent les utilisateurs mettent le nom de leur compte GiHub
+namespace App\Banque;
+
+use App\Client\Compte as CompteClient;
 
 /**
  * Objet Compte bancaire
  */
 // Déclaration de ma classe "Compte"
-abstract class Compte // Permet de rendre cette classe abstraite
+abstract class Compte
 {
     // Propriétés
     /**
      * Titulaire du compte
      *
-     * @var string
+     * @var CompteClient
+     * 
      */
-    private string $titulaire;
+    private CompteClient $titulaire;
 
     /**
      * Solde du compte
@@ -27,13 +30,13 @@ abstract class Compte // Permet de rendre cette classe abstraite
     /**
      * Constructeur du compte bancaire
      *
-     * @param string $nom Nom du titulaire
+     * @param CompteClient $Compte Compte client du titulaire
      * @param float $montant Montant du solde à l'ouverture
      */
-    public function __construct(string $nom, float $montant = 100) 
+    public function __construct(CompteClient $compte, float $montant = 100) 
     {
         // On attribut le nom à la propriété titulaire de l'instance créée.
-        $this->titulaire = $nom; // On injecte le nom dans la propriété "titulaire"
+        $this->titulaire = $compte;
 
         // On attribut le montant à la propriété solde
         // On accède à une constantre privée par l'intermiédiaire de "self" self étant le nom de la classe
@@ -54,23 +57,23 @@ abstract class Compte // Permet de rendre cette classe abstraite
     /**
      * Getter de Titulaire - Retourne la valeur du titulaire du compte
      *
-     * @return string
+     * @return CompteClient
      */
-    public function getTitulaire(): string
+    public function getTitulaire(): CompteClient
     {
         return $this->titulaire;
     }
     /**
-     * Modifie le nom du titulaire et retourne l'objet
+     * Modifie le compte du titulaire et retourne l'objet
      *
-     * @param string $nom Nom du titulaire
+     * @param CompteClient $compte Compte client du titulaire
      * @return Compte Compte bancaire
      */
-    public function setTitulaire(string $nom): self //Retour l'objet lui-même
+    public function setTitulaire(CompteClient $compte): self //Retour l'objet lui-même
     {
         // On vérifie si on a un titulaire
-        if ($nom != "") {
-            $this->titulaire = $nom;
+        if (isset($compte)){
+            $this->titulaire = $compte;
         }
         return $this;
     }
