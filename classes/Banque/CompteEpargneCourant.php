@@ -12,10 +12,10 @@ class CompteEpargneCourant extends CompteEpargne
      * @param float $montant Montant du solde à l'ouverture
      * @param integer $decouvert Découvert autorisé
      */
-    public function __construct(string $nom, float $montant, int $taux, int $decouvert)
+    public function __construct(string $nom, string $prenom, float $montant, int $taux, int $decouvert)
     {
         // On transfère les informations nécessaires au construction de Compte
-        parent::__construct($nom, $montant, $taux);
+        parent::__construct($nom, $prenom, $montant, $taux);
 
         $this->decouvert = $decouvert;
     }
